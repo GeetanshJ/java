@@ -1,4 +1,10 @@
 class Car {
+    static String name;
+
+    static{
+        name="Geetansh";
+    }
+
     public static void getHorn(){
         System.out.println("Beep Beep!!!");
     }

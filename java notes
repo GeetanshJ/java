@@ -67,4 +67,7 @@ STATIC
 ======
 
 static keyword means variables belongs to class rather than object and for each object value is same
-using static { name = "value"} we can initialised value for var 
+using static { name = "value"} we can initialised value for var  
+
+first class is loaded then objects are instantiated 
+to directly load class we can use Class.forName("class_name")
