@@ -1,0 +1,70 @@
+java is platform independent and jvm (java virtual machine is platform dependent)
+
+java runs on jvm we only need jre and jvm to run java on other system
+
+JDK = Java development kit
+JRE = java runtime environment
+JVM = java virtual machine
+
+JDK has jre and jvm
+JVM ha libraries and jvm
+
+Our code is converted to byte code (filename.class) and this code is run by
+
+Integer vs int => Integer is a wrapper class and int is primitive data type
+
+| Data Type | Size    | Default Value | Description                          | Example             |
+| --------- | ------- | ------------- | ------------------------------------ | ------------------- |
+| `byte`    | 1 byte  | `0`           | Small integers (-128 to 127)         | `byte a = 100;`     |
+| `short`   | 2 bytes | `0`           | Larger than byte (-32,768 to 32,767) | `short b = 10000;`  |
+| `int`     | 4 bytes | `0`           | Default integer type                 | `int c = 50000;`    |
+| `long`    | 8 bytes | `0L`          | Very large integers                  | `long d = 100000L;` |
+| `float`   | 4 bytes | `0.0f`        | Decimal numbers with less precision  | `float e = 5.5f;`   |
+| `double`  | 8 bytes | `0.0d`        | Decimal numbers with high precision  | `double f = 10.5;`  |
+| `char`    | 2 bytes | `'\u0000'`    | Single 16-bit Unicode character      | `char g = 'A';`     |
+| `boolean` | \~1 bit | `false`       | True or false                        | `boolean h = true;` |
+
+binary format => 0b101 means 5
+also 10_00_000 is valid just not to get confused
+
+we can convert byte to int implicitly but not int to byhte we have to write
+byte a = (int) 500; here 500 % 256 will happen because 500 % length_of_range_of_byte is there
+
+# Type Conversion (Automatic / Implicit)
+
+Allowed conversions include:
+byte → short → int → long → float → double
+
+# Type Casting (Manual / Explicit)
+
+
+
+
+we have two types of memeory => heap and stack
+
+every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap   
+
+
+
+in jvm we have heap memeory, inside it we have string constant pool 
+IT WILL FIND IF STRING VALUE IS PRESENT IF YES THEN THEN ASSIGN THE ADDRESS AND ARE IMMUTABLE 
+everytime new string is created when append
+i.e why string builder was there
+i.e String s1 = "J" and String s2 = "j" and s1 == s2
+
+String str = new String("HELLO");
+String str1 = "HELLO";
+
+here str is stored in heap memory and str1 is stored in string constant pool
+so str != str1
+
+
+Increasing cpacity rule for SB => new capacity = (old capacity * 2) + 2
+****************************** 
+
+
+STATIC
+======
+
+static keyword means variables belongs to class rather than object and for each object value is same
+using static { name = "value"} we can initialised value for var 
