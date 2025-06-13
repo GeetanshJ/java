@@ -5,6 +5,7 @@ public class Level1 {
     }
     public void show() {
         System.out.println("Show from Level 1");
+        // return 0;
     }
 }
 

@@ -71,7 +71,17 @@ using static { name = "value"} we can initialised value for var
 first class is loaded then objects are instantiated  
 to directly load class we can use Class.forName("class_name")
 
+to have utility methodsa we use static with them not do again create objects
+to have classes having relation wiht outer classes we use static and forn normal reason also
 
+to create non static sub class
+==============================
+# A obj = new A(); 
+# A.C obj1 = obj.new C()# 
+
+to create static sub class
+==============================
+******** A.C obj2 = new A.C()# 
 
 in java if child class constructor is called then super class is already present and called parent class default constructor
 
@@ -110,3 +120,37 @@ like => new Class()
 ******** =>  typically used for one-time use where you don't need to reuse the object later.  
 
 by default java.lang is there imported so sout is working
+
+
+
+
+
+# MODIFIERS
+******** ==
+
+those who will give error
+src/
+├── pkg1/
+│   ├── Base.java => 
+│   ├── SubSamePackage.java => pvt
+│   └── NonSubSamePackage.java => pvt
+├── pkg2/
+│   ├── SubDifferentPackage.java => pvt,def
+│   └── NonSubDifferentPackage.java => pvt,def,prot
+
+
+# Polymorphism 
+==============  
+
+compile time => overloading
+runtime => overriding
+
+# final
+
+in var => const var
+in class => to stop inheritance 
+in method => if you dont want to override any method
+
+
+
+# int a = 10;     Integer b = a;// Auto-boxing (int → Integer)      int c = b; / Unboxing (Integer → int)

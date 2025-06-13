@@ -1,4 +1,44 @@
-import tools.*;
+class A{
+    static  class C{
+        public void hello(){
+            System.out.println("Hello from C");
+        }
+    }
+
+    public A(){
+        System.out.println("Constructor A");
+    }
+
+    public void show(){
+        System.out.println("A show");
+    }
+}
+
+class B extends A{
+    public B(){
+        System.out.println("Constructor B");
+    }
+
+    @Override
+    public void show(){
+        System.out.println("B show");
+    }
+}
+
+class C extends B{
+    public C(){
+        System.out.println("Constructor C");
+    }
+
+    @Override
+    public void show(){
+        System.out.println("C show");
+    }
+
+    protected  static void dd(){
+        System.out.println("DD");
+    }
+}
 
 public class Main{
     public Main(){
@@ -6,20 +46,10 @@ public class Main{
     }
 
     public static void main(String[] args) {    
-        Level1 obj = new Level4();
+        A obj = new A();
+        // A.C obj1 = obj.new C();
 
-        obj.show();
-        // Parent obj1 = new Parent();
-        // Thread t1 = new Thread(() -> {
-        //     for(int i = 0;i < 4 ; i++){
-        //         System.out.println("Child process " + i + " is running");
-        //     }
-        // });
-
-        // t1.start();
-        // t1.join();
-        // System.out.println("Main Process...");
-
-        
+        A.C obj2 = new A.C();
+        obj2.hello();
     }
 }  
