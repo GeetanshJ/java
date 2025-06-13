@@ -2,14 +2,13 @@ java is platform independent and jvm (java virtual machine is platform dependent
 
 java runs on jvm we only need jre and jvm to run java on other system
 
-JDK = Java development kit
-JRE = java runtime environment
-JVM = java virtual machine
+# JDK = Java development kit
+# JRE = java runtime environment
+# JVM = java virtual machine
+# JDK has jre and jvm
+# JVM ha libraries and jvm
 
-JDK has jre and jvm
-JVM ha libraries and jvm
-
-Our code is converted to byte code (filename.class) and this code is run by
+`*******` Our code is converted to byte code (filename.class) and this code is run by
 
 Integer vs int => Integer is a wrapper class and int is primitive data type
 
@@ -42,18 +41,18 @@ byte → short → int → long → float → double
 
 we have two types of memeory => heap and stack
 
-every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap   
+`*******` every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap   
 
 
 
-in jvm we have heap memeory, inside it we have string constant pool 
+`*******` in jvm we have heap memeory, inside it we have string constant pool 
 IT WILL FIND IF STRING VALUE IS PRESENT IF YES THEN THEN ASSIGN THE ADDRESS AND ARE IMMUTABLE 
 everytime new string is created when append
 i.e why string builder was there
 i.e String s1 = "J" and String s2 = "j" and s1 == s2
 
-String str = new String("HELLO");
-String str1 = "HELLO";
+# string str = new String("HELLO");
+# string str1 = "HELLO";
 
 here str is stored in heap memory and str1 is stored in string constant pool
 so str != str1
@@ -63,11 +62,51 @@ Increasing cpacity rule for SB => new capacity = (old capacity * 2) + 2
 ****************************** 
 
 
-STATIC
-======
+# STATIC
+# ======
 
 static keyword means variables belongs to class rather than object and for each object value is same
 using static { name = "value"} we can initialised value for var  
 
-first class is loaded then objects are instantiated 
+first class is loaded then objects are instantiated  
 to directly load class we can use Class.forName("class_name")
+
+
+
+in java if child class constructor is called then super class is already present and called parent class default constructor
+
+`********`   if we want to call paramterised constructor of parent we have to pass values in super keyword
+
+## the super keyoword is present already in it and is hidden 
+# every super class in java extends Object class by default
+
+`********` join method will make sure till the thread is not stopped it wont execute
+# this() it will call the constructor of the same class
+
+********
+========
+class Child extends  Parent{
+    Child(){
+        this(1);
+        System.out.println("This is child"); 
+    }
+
+    Child(int a){
+        this(1,2);
+        System.out.println("This is child 1 paramter"); 
+    }
+
+    Child(int a,int b){
+        System.out.println("This is child 2 parameter"); 
+    }
+}
+
+
+
+
+# object that does not have any name are called anonymous object
+like => new Class()
+
+******** =>  typically used for one-time use where you don't need to reuse the object later.  
+
+by default java.lang is there imported so sout is working

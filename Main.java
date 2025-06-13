@@ -1,16 +1,25 @@
+import tools.*;
+
 public class Main{
+    public Main(){
+        System.out.println("Inside Main constructor");
+    }
 
     public static void main(String[] args) {    
-        Car obj = new Car();
-        obj.getBrake();
+        Level1 obj = new Level4();
 
-        // StringBuilder sb = new StringBuilder("");
-        // System.out.println(sb.capacity());
-        // sb.append(" World");
-        // sb.insert(0, "hello welco");
-        // // sb.delete(1,3);
-        // System.out.println(sb);
-        // System.out.println(sb.capacity());
-        System.out.println(Car.name + " " + obj.name);
+        obj.show();
+        // Parent obj1 = new Parent();
+        // Thread t1 = new Thread(() -> {
+        //     for(int i = 0;i < 4 ; i++){
+        //         System.out.println("Child process " + i + " is running");
+        //     }
+        // });
+
+        // t1.start();
+        // t1.join();
+        // System.out.println("Main Process...");
+
+        
     }
 }  
