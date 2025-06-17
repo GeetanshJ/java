@@ -1,9 +1,16 @@
 java is platform independent and jvm (java virtual machine is platform dependent)
+a = 10 a is ref var in stack and 10 is object in heap
+j ava runs on jvm we only need jre and jvm to run java on other system
 
-java runs on jvm we only need jre and jvm to run java on other system
-
+*********** String[] args means all the values you are passing in cli along with runtime
+java demo "" "" ""
 # JDK = Java development kit
+============================
+it includes jre,javac,archiever - jar, docs gen -javadocs , interpreter
+
 # JRE = java runtime environment
+================================
+ 
 # JVM = java virtual machine
 # JDK has jre and jvm
 # JVM ha libraries and jvm
@@ -41,7 +48,7 @@ byte → short → int → long → float → double
 
 we have two types of memeory => heap and stack
 
-`*******` every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap   
+`*******` `every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap   `
 
 
 
@@ -65,8 +72,8 @@ Increasing cpacity rule for SB => new capacity = (old capacity * 2) + 2
 # STATIC
 # ======
 
-static keyword means variables belongs to class rather than object and for each object value is same
-using static { name = "value"} we can initialised value for var  
+`static keyword means variables belongs to class rather than object and for each object value  is same`
+`using static { name = "value"} we can initialised value for var  `
 
 first class is loaded then objects are instantiated  
 to directly load class we can use Class.forName("class_name")
@@ -128,15 +135,15 @@ by default java.lang is there imported so sout is working
 # MODIFIERS
 ******** ==
 
-those who will give error
-src/
-├── pkg1/
-│   ├── Base.java => 
-│   ├── SubSamePackage.java => pvt
-│   └── NonSubSamePackage.java => pvt
-├── pkg2/
-│   ├── SubDifferentPackage.java => pvt,def
-│   └── NonSubDifferentPackage.java => pvt,def,prot
+`those who will give error`
+`src/`
+`├── pkg1/`
+`│   ├── Base.java => `
+`│   ├── SubSamePackage.java => pvt`
+`│   └── NonSubSamePackage.java => pvt`
+`├── pkg2/`
+`│   ├── SubDifferentPackage.java => pvt,def`
+`│   └── NonSubDifferentPackage.java => pvt,def,prot`
 
 
 # Polymorphism 
@@ -147,10 +154,37 @@ runtime => overriding
 
 # final
 
-in var => const var
-in class => to stop inheritance 
-in method => if you dont want to override any method
+`in var => const var`
+`in class => to stop inheritance`
+`in method => if you dont want to override any method`
 
 
 
 # int a = 10;     Integer b = a;// Auto-boxing (int → Integer)      int c = b; / Unboxing (Integer → int)
+
+
+
+********** `we cannot create object of abstract class`
+
+we defined abstract methods and initialised them in sub classes and abstract class can have both abstract and nonabstract methods but abstract method should have abstract class
+
+# for extending either we need all function from abstract class or just abstract keyword in sub class generally non abstract class are called concrete class
+
+*** `we cannot create ojwct of abstract class it is called by obj  of non abstract sub class` 
+
+
+
+
+
+# Inner class
+=============
+
+********** when we create class after object
+A obj = new A(){
+    public void hello(){
+
+    }
+}
+
+file name will be A$1.class
+
