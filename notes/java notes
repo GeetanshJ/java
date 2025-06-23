@@ -1,6 +1,6 @@
 java is platform independent and jvm (java virtual machine is platform dependent)
 a = 10 a is ref var in stack and 10 is object in heap
-j ava runs on jvm we only need jre and jvm to run java on other system
+java runs on jvm we only need jre and jvm to run java on other system
 
 *********** String[] args means all the values you are passing in cli along with runtime
 java demo "" "" ""
@@ -33,7 +33,7 @@ Integer vs int => Integer is a wrapper class and int is primitive data type
 binary format => 0b101 means 5
 also 10_00_000 is valid just not to get confused
 
-we can convert byte to int implicitly but not int to byhte we have to write
+we can convert byte to int implicitly but not int to byte we have to write
 byte a = (int) 500; here 500 % 256 will happen because 500 % length_of_range_of_byte is there
 
 # Type Conversion (Automatic / Implicit)
@@ -48,7 +48,16 @@ byte → short → int → long → float → double
 
 we have two types of memeory => heap and stack
 
-`*******` `every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap   `
+`*******` `every method has a stack and every variable in a method is called local var and stored in a stack and all the variable present inside the class and outside the method are called instance var they are stored in a heap and object are just ref variable, ref var are present in stack and object is created in heap`
+
+| Feature         | Local Variable                                 | Instance Variable                       |
+| --------------- | ---------------------------------------------- | --------------------------------------- |
+| Declared in     | Inside a method/constructor/block              | Inside a class, outside methods         |
+| Scope           | Only within that method/block                  | Entire class via object reference       |
+| Lifetime        | Created when method is called; destroyed after | Lives as long as the object lives       |
+| Stored in       | Stack                                          | Heap (part of object)                   |
+| Access modifier | Cannot have (private, public, etc.)            | Can have access modifiers               |
+| Default value   | No default value; must be initialized          | Has default (null, 0, false) if not set |
 
 
 
@@ -65,8 +74,8 @@ here str is stored in heap memory and str1 is stored in string constant pool
 so str != str1
 
 
-Increasing cpacity rule for SB => new capacity = (old capacity * 2) + 2
-****************************** 
+`Increasing capacity rule for SB => new capacity = (old capacity * 2) + 2`
+`******************************` 
 
 
 # STATIC
@@ -78,17 +87,17 @@ Increasing cpacity rule for SB => new capacity = (old capacity * 2) + 2
 first class is loaded then objects are instantiated  
 to directly load class we can use Class.forName("class_name")
 
-to have utility methodsa we use static with them not do again create objects
-to have classes having relation wiht outer classes we use static and forn normal reason also
+to have utility methods we use static with them not do again create objects
+to have classes having relation wiht outer classes we use static and for normal reason also
 
 to create non static sub class
 ==============================
 # A obj = new A(); 
-# A.C obj1 = obj.new C()# 
+# A.C obj1 = obj.new C()
 
 to create static sub class
 ==============================
-******** A.C obj2 = new A.C()# 
+******** A.C obj2 = new A.C()
 
 in java if child class constructor is called then super class is already present and called parent class default constructor
 
@@ -159,9 +168,7 @@ runtime => overriding
 `in method => if you dont want to override any method`
 
 
-
 # int a = 10;     Integer b = a;// Auto-boxing (int → Integer)      int c = b; / Unboxing (Integer → int)
-
 
 
 ********** `we cannot create object of abstract class`
@@ -170,7 +177,7 @@ we defined abstract methods and initialised them in sub classes and abstract cla
 
 # for extending either we need all function from abstract class or just abstract keyword in sub class generally non abstract class are called concrete class
 
-*** `we cannot create ojwct of abstract class it is called by obj  of non abstract sub class` 
+*** `we cannot create oject of abstract class it is called by obj  of non abstract sub class` 
 
 
 
@@ -188,3 +195,14 @@ A obj = new A(){
 
 file name will be A$1.class
 
+
+
+
+
+
+| 🔹 **Type**               | 🔹 **Where It’s Created**              | 🔹 **Purpose / Use**                                                                                                                                                                                            |
+| ------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Member Inner Class**    | Inside a class (non-static)            | - Acts as a helper class tightly bound to the outer class. <br> - Can access all outer class members, even `private`. <br> - Useful when the inner class is not meaningful outside the outer class.             |
+| **Static Nested Class**   | Inside a class with `static` modifier  | - Groups related static classes. <br> - Does **not** need outer class instance. <br> - Can only access static members of outer class. <br> - Good for utility/helper classes that don't depend on object state. |
+| **Local Inner Class**     | Inside a method, constructor, or block | - Exists only within that method/block. <br> - Used for temporary, short-lived functionality. <br> - Keeps code localized and clean.                                                                            |
+| **Anonymous Inner Class** | Inside a method or passed as argument  | - Used for **one-time** implementation of an interface or abstract class. <br> - Common in event handling and callbacks. <br> - No class name, defined and instantiated together.                               |
