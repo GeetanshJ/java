@@ -1,7 +1,40 @@
 java is platform independent and jvm (java virtual machine is platform dependent)
 a = 10 a is ref var in stack and 10 is object in heap
 java runs on jvm we only need jre and jvm to run java on other system
+✅ 1. JDK (Java Development Kit)
+🔹Component	🔧 Kya karta hai (Usage)
+javac (Compiler)	.java file ko .class (bytecode) me convert karta hai
+java (Launcher)	JVM ko start karke program run karta hai
+javadoc	Java source code se HTML documentation banata hai
+jar	Multiple .class files ko ek .jar file me pack karta hai
+jshell	Java ke REPL (Read-Eval-Print-Loop) me code try karne ke liye
 
+➡️ Kyu chahiye? Java application develop, compile aur test karne ke liye JDK must hai.
+
+📦 JDK = JRE + Development Tools
+
+✅ 2. JRE (Java Runtime Environment)
+🔹Component	🔧 Kya karta hai (Usage)
+JVM	Bytecode ko run karta hai
+Java Libraries	Pre-written classes (e.g., System.out.println, List)
+Support Files	JVM ko configure karne ke liye
+
+➡️ Kyu chahiye? Java program ko run karne ke liye. Agar tumhe sirf app chalani hai (likhni nahi), to sirf JRE kaafi hai.
+
+📦 JRE = JVM + Java Libraries
+
+✅ 3. JVM (Java Virtual Machine)
+🔹Component	🔧 Kya karta hai (Usage)
+Class Loader	.class files ko memory me load karta hai
+Bytecode Verifier	Check karta hai code safe hai ya nahi
+Runtime Data Areas	Data store karta hai runtime pe (Heap, Stack, etc.)
+Execution Engine	Bytecode ko execute karta hai
+┗ Interpreter	Bytecode ko line by line chalata hai
+┗ JIT Compiler	Repeat hone wale code ko native code me convert karta hai (faster)
+Native Method Interface	Java ko C/C++ jese native code se connect karta hai
+Native Libraries	Platform-specific libraries ko use karta hai
+
+➡️ Kyu chahiye? JVM Java ka core hai — isi ke through Java platform-independent banta hai.
 *********** String[] args means all the values you are passing in cli along with runtime
 java demo "" "" ""
 # JDK = Java development kit
@@ -364,3 +397,6 @@ Bilkul! Java code kaise execute hota hai, uska poora process step-by-step samjht
 
 
 
+
+# interface is a blueprint of class / refernce type of interface 
+`variables ind`

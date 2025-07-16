@@ -1,0 +1,97 @@
+
+## 1️⃣ Heap Memory
+
+### Kya store hota hai?
+
+* **Objects** (jo `new` se create hote hain)
+* **Instance variables** (har object ke apne variables)
+* **Arrays**
+* JVM ka Garbage Collector yahi se unused objects ko remove karta hai.
+
+### Size:
+
+* Heap generally **sabse badi memory area hoti hai** JVM mein, kyunki application ke objects aur data yahi store hote hain.
+* Size configurable hoti hai JVM options se (`-Xms`, `-Xmx`), aur typically **hundreds of MBs se lekar GBs tak ho sakti hai**.
+
+---
+
+## 2️⃣ Stack Memory
+
+### Kya store hota hai?
+
+* **Local variables** (method ke andar jo variables declare hote hain, primitive ya reference type)
+* **Method call information** (return address, parameters)
+* **Execution context for each thread**
+* Har thread ka apna alag stack hota hai.
+
+### Size:
+
+* Stack size **heap se bahut chhoti hoti hai**.
+* Usually JVM me har thread ke liye stack size kuch MBs hoti hai (default around 1MB, can be changed with `-Xss` option).
+* Stack memory limited aur fast hoti hai (LIFO order).
+
+---
+
+## 3️⃣ Method Area (ya Metaspace in Java 8+)
+
+### Kya store hota hai?
+
+* **Class metadata** (loaded classes, interfaces info)
+* **Static variables**
+* **Runtime constant pool** (String literals, constants)
+* **Method data** (bytecode, method info)
+
+### Size:
+
+* Method area **heap aur stack se chhoti hoti hai**, lekin flexible hoti hai.
+* Java 8 ke baad ye Metaspace mein store hota hai jo native memory se allocate hota hai, aur iska size system memory ke hisaab se adjust hota hai.
+* Pehle PermGen hota tha jo fixed size ka hota tha, ab Metaspace dynamic size ka hai.
+
+---
+
+## Size ka Summary (Typical JVM):
+
+| Memory Area             | Typical Size Range              | Description                    |
+| ----------------------- | ------------------------------- | ------------------------------ |
+| Heap                    | Hundreds of MBs to several GBs  | Largest area, stores objects   |
+| Stack                   | Per thread: \~256 KB to few MBs | Small, per-thread local data   |
+| Method Area / Metaspace | Varies, usually less than heap  | Stores class info, static vars |
+
+---
+
+## Final points:
+
+* **Heap sabse badi hoti hai**, kyunki application ka main data yahi store hota hai.
+* **Stack har thread ke liye chhoti hoti hai**, but bahut important hoti hai for method execution.
+* **Method area class aur static info store karta hai**, aur size dynamically adjust hota hai.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| 🧠 **Memory Area / Component**        | 💾 **Store Hone Wali Cheez / Kaam**                                                                                     | 🔎 **Explanation**                                                                                        |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| 🔹 **Stack Memory**                   | • Local variables (primitive + references) <br> • Method parameters <br> • Local final variables                       | Har method call ke liye stack frame banta hai. Fast & thread-specific hoti hai.                           |
+| 🔹 **Heap Memory**                    | • Objects (via `new`) <br> • Instance variables <br> • Final instance variables <br> • Enum instances                   | Long-lived memory. Garbage collector manage karta hai. Shared among all classes and methods.              |
+| 🔹 **Method Area (Metaspace)**       | • Class metadata <br> • Bytecode (method code) <br> • Static variables <br> • Static final constants <br> • Interfaces <br> • Constant pool (string literals, symbols) <br> • Enum definitions | JVM ka shared area jahan class load hone par info store hoti hai. Java 8+ mein Metaspace (native memory). |
+| 🔹 **ClassLoader**                   | • `.class` files ko JVM mein load karta hai                                                                             | Bytecode ko Method Area mein bhejne ka kaam karta hai. Bootstrap, Extension, Application loaders.         |
+| 🔹 **JVM (Java Virtual Machine)**    | • Executes bytecode <br> • Manages memory (heap, stack, method area) <br> • Runs garbage collector                      | JVM Java application ka runtime engine hai. Ye platform-independent execution allow karta hai.            |
+| 🔹 **JRE (Java Runtime Environment)**| • JVM + Runtime Libraries + Supporting files                                                                            | Java program ko **run** karne ke liye required hota hai. JDK ka subset hai.                               |
+| 🔹 **JDK (Java Development Kit)**    | • JRE + Compiler (`javac`) + Debugger + Development tools                                                               | Java program ko **develop** aur **run** karne ke liye complete toolkit. Developers ke liye hai.           |
